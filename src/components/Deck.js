@@ -5,7 +5,7 @@ import Card from "./Card";
 import axios from 'axios';
 import "../styles/Deck.css";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-const cards = [1, 2];
+const cards = 2
 
 // const objs = [
 //   {
@@ -76,7 +76,7 @@ function Deck() {
   
   
   
-  const [props, set] = useSprings(cards.length, i => ({
+  const [props, set] = useSprings(cards, i => ({
     ...to(i),
     from: from(i)
   }));
@@ -125,7 +125,7 @@ function Deck() {
           };
         });
   
-        if (!down && gone.size === cards.length)
+        if (!down && gone.size === cards)
           setTimeout(() => gone.clear() || set(i => to(i)), 600);
       }
     );
