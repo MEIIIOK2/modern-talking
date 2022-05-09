@@ -27,7 +27,7 @@ class Card extends React.Component {
           <div className="card">
             <Carousel>
               
-              <img src={'https:cardanoyield.info/img?num='+id} alt="profilePicture" />
+              <img src={'https://cardanoyield.info/img?num='+id} alt="profilePicture" />
               
             </Carousel>
             <h2>{name},</h2>

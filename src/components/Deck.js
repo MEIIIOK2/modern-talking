@@ -69,7 +69,7 @@ function Deck() {
   const [gone] = useState(() => new Set());
   const [objs,setobjs] = useState([]);
   useEffect(()=>{
-    axios.get('https:cardanoyield.info/info').then((resp)=>{
+    axios.get('https://cardanoyield.info/info').then((resp)=>{
       setobjs(resp.data);console.log(resp.data)
     })
   },[])
@@ -100,7 +100,7 @@ function Deck() {
         if (!down && trigger) {
           gone.add(index);
           
-          axios.get('https:cardanoyield.info/ans?id='+objs[index].id+'&ans='+dir).then((resp)=>{
+          axios.get('https://cardanoyield.info/ans?id='+objs[index].id+'&ans='+dir).then((resp)=>{
             var percent = 'с вами согласны '+Math.round(resp.data.percent*100,2)+' % пользователей' 
             Notify.success(percent);
           })
