@@ -5,56 +5,11 @@ import Card from "./Card";
 import axios from 'axios';
 import "../styles/Deck.css";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-const cards = 2
-
-// const objs = [
-//   {
-//     pics: [
-//       "http://127.0.0.1:5000/img"
-//     ],
-//     name: "Chloe",
-//     age: 18,
-//     distance: "1 mile away",
-//     text: "The C and the L are silent."
-//   },
-//   {
-//     pics: [
-//       "https://images.unsplash.com/photo-1535378719329-f0a8b9a42152?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-//     ],
-//     name: "Sarah",
-//     age: 24,
-//     distance: "5 miles away",
-//     text:
-//       "It's tough being a single mom. Or so I'm told, I wouldn't know; I don't have kids."
-//   },
-//   {
-//     pics: [
-//       "https://images.unsplash.com/photo-1514924801778-1db0aba75e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-//     ],
-//     name: "Savannah",
-//     age: 29,
-//     distance: "3 miles away",
-//     text: "A little known fact is that I cover about 40% of Africa."
-//   },
-//   {
-//     pics: [
-//       "https://images.unsplash.com/photo-1456885284447-7dd4bb8720bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-//       "https://images.unsplash.com/photo-1532635270-c09dac425ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-//     ],
-//     name: "Jane",
-//     age: 22,
-//     distance: "2 miles away",
-//     text:
-//       "On the first date I will carve our initials in a tree. It's the most romantic way to let you know I have a knife."
-//   }
-// ];
-
-
-
+const cards = 27
 
 const to = i => ({
-  x: 0,
-  y: i * -10,
+  x: 20,
+  y: i * -5,
   scale: 1,
   rot: -10 + Math.random() * 20,
   delay: i * 100
@@ -101,7 +56,7 @@ function Deck() {
           gone.add(index);
           
           axios.get('https://cardanoyield.info/ans?id='+objs[index].id+'&ans='+dir).then((resp)=>{
-            var percent = 'с вами согласны '+Math.round(resp.data.percent*100,2)+' % пользователей' 
+            var percent = 'C вами согласны '+Math.round(resp.data.percent*100,2)+' % пользователей' 
             Notify.success(percent);
           })
         }
@@ -145,5 +100,6 @@ function Deck() {
     )
   }
 }
+
 
 export default Deck;

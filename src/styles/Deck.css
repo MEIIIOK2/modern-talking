@@ -16,7 +16,8 @@ body {
 }
 
 #root {
-  background: salmon;
+  
+  background: radial-gradient(#000000 30%, #404067);
   position: fixed;
   overflow: hidden;
   width: 100%;
@@ -27,25 +28,25 @@ body {
 }
 
 #root > div {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   will-change: transform;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
 #root > div > div {
   padding: 5px;
-  background-color: white;
+  background-color: #ffffff;
   background-size: auto 85%;
   background-repeat: no-repeat;
-  background-position: center center;
-  width: 45vh;
-  max-width: 300px;
-  height: 550px;
-  max-height: 570px;
+  background-position: center bottom;
+  width: 85vh;
+  max-width: 800px;
+  height: 600px;
+  max-height: 600px;
   will-change: transform;
   border-radius: 10px;
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
@@ -53,34 +54,55 @@ body {
 }
 
 img {
-  height: 380px;
+  height: 500px;
+
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 button[aria-label="previous"],
 button[aria-label="next"] {
-  background: salmon !important;
-  color: black !important;
+  background: rgb(255, 255, 255) !important;
+  color: rgb(255, 255, 255) !important;
+  opacity: 0;
 }
 
 h2 {
   display: inline-block;
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  margin-left: 15px;
+  color: rgb(0, 0, 0);
+  font-family: "Copperplate", fantasy;
+  /* font-family: "Lucida Console", "Courier New", monospace; */
+
+  
+
 }
 
-h2:nth-of-type(2) {
-  opacity: 0.7;
-  font-size: 1.35rem;
-}
+/* h2:nth-of-type(2) {
+  opacity: 1;
+  font-size: 1.2rem;
+  color:rgb(0, 0, 0);
+} */
 
 h5 {
-  margin-top: -15px;
-  margin-left: 2px;
-  color: lightgray;
+  margin-top: -10px;
+  margin-left: 15px;
+  font-family: "Times New Roman", Times, serif;
+  font: normal 20px f;
+  color: rgb(0, 0, 0);
 }
 h5:last-of-type {
-  color: darkgray;
+  color: rgb(0, 0, 0);
+}
+
+h6 {
+  margin-top: -10px;
+  margin-left: 15px;
+  opacity: 0.7;
+  font-family: "Times New Roman", Times, serif;
+  font: normal 15px f;
+  color: rgb(0, 0, 0);
 }
 
 .card > div {
@@ -96,5 +118,6 @@ h5:last-of-type {
 }
 
 .slider-control-bottomcenter > ul > li > button {
-  color: salmon !important;
+  color: rgb(255, 255, 255) !important;
+  opacity: 0;
 }
